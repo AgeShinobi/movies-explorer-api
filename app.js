@@ -12,6 +12,7 @@ const { PORT, DATABASE_URL } = require('./config');
 const errorsCentral = require('./middlewares/errorsCentral');
 const { cors } = require('./middlewares/cors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const { limiter } = require('./middlewares/rateLimit');
 
 // Celebrate Joi Validator Middleware
 const { errors } = require('celebrate');
@@ -29,6 +30,7 @@ app.use(requestLogger);
 
 app.use(express.json());
 app.use(cors);
+app.use(limiter);
 app.use(mainRouter);
 
 app.use(errorLogger);
