@@ -5,6 +5,7 @@ require('dotenv').config();
 
 const express = require('express');
 const mongoose = require('mongoose');
+const helmet = require('helmet');
 
 const { PORT, DATABASE_URL } = require('./config');
 
@@ -31,6 +32,7 @@ app.use(requestLogger);
 app.use(express.json());
 app.use(cors);
 app.use(limiter);
+app.use(helmet());
 app.use(mainRouter);
 
 app.use(errorLogger);
