@@ -1,8 +1,8 @@
 const allowedCors = [
-  'https://mesto.ageshinobi.nomoredomains.rocks',
-  'http://mesto.ageshinobi.nomoredomains.rocks',
-  'https://api.mesto.ageshinobi.nomoredomains.rocks',
-  'http://api.mesto.ageshinobi.nomoredomains.rocks',
+  'https://api.mv-exp.nomoreparties.sbs',
+  'http://api.mv-exp.nomoreparties.sbs',
+  'https://mv-exp.nomoreparties.sbs',
+  'http://mv-exp.nomoreparties.sbs',
   'https://localhost:3001',
   'http://localhost:3001',
 ];
