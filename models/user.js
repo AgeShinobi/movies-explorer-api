@@ -3,6 +3,12 @@ const mongoose = require('mongoose');
 const isEmail = require('validator/lib/isEmail');
 const bcrypt = require('bcryptjs');
 
+// Config
+const {
+  VALIDATION_MESSAGE_EMAIL,
+  AUTHORIZATION_ERROR_MESSAGE,
+} = require('../config');
+
 const AuthorizationError = require('../errors/authorizationError');
 
 const userSchema = new mongoose.Schema({
@@ -12,7 +18,7 @@ const userSchema = new mongoose.Schema({
     unique: true,
     validate: {
       validator: (v) => isEmail(v),
-      message: 'Неверный формат почты',
+      message: VALIDATION_MESSAGE_EMAIL,
     },
   },
   password: {
@@ -35,12 +41,12 @@ const userSchema = new mongoose.Schema({
         .then((user) => {
           // Не нашелся - отклоняем запрос
           if (!user) {
-            throw new AuthorizationError('Неверные почта или пароль');
+            throw new AuthorizationError(AUTHORIZATION_ERROR_MESSAGE);
           }
           return bcrypt.compare(password, user.password)
             .then((matched) => {
               if (!matched) {
-                throw new AuthorizationError('Неверные почта или пароль');
+                throw new AuthorizationError(AUTHORIZATION_ERROR_MESSAGE);
               }
               return user;
             });

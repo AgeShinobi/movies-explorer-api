@@ -1,8 +1,8 @@
 const allowedCors = [
-  'https://api.mv-exp.nomoreparties.sbs',
-  'http://api.mv-exp.nomoreparties.sbs',
-  'https://mv-exp.nomoreparties.sbs',
-  'http://mv-exp.nomoreparties.sbs',
+  'https://api.movie.ageshinobi.nomoreparties.sbs',
+  'http://api.movie.ageshinobi.nomoreparties.sbs',
+  'https://movie.ageshinobi.nomoreparties.sbs',
+  'http://movie.ageshinobi.nomoreparties.sbs',
   'https://localhost:3001',
   'http://localhost:3001',
 ];

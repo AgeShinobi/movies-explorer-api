@@ -1,5 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const mongoose = require('mongoose');
+const isURL = require('validator/lib/isURL');
+const { VALIDATION_MESSAGE_URL } = require('../config');
 
 const movieSchema = new mongoose.Schema({
   country: {
@@ -25,14 +27,26 @@ const movieSchema = new mongoose.Schema({
   image: {
     type: String,
     required: true,
+    validate: {
+      validator: (v) => isURL(v),
+      message: VALIDATION_MESSAGE_URL,
+    },
   },
   trailerLink: {
     type: String,
     required: true,
+    validate: {
+      validator: (v) => isURL(v),
+      message: VALIDATION_MESSAGE_URL,
+    },
   },
   thumbnail: {
     type: String,
     required: true,
+    validate: {
+      validator: (v) => isURL(v),
+      message: VALIDATION_MESSAGE_URL,
+    },
   },
   owner: {
     type: mongoose.Schema.Types.ObjectId,

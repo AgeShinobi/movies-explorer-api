@@ -6,4 +6,4 @@
 
 IP 51.250.29.155
 
-Backend https://api.mv-exp.ageshinobi.nomoreparties.sbs/
+Backend https://api.movie.ageshinobi.nomoreparties.sbs/
